@@ -1,12 +1,13 @@
 import { Formik, Form, Field } from 'formik';
 
+
 export default function SearchBar({ onSearch }) {
   return (
     <Formik
       initialValues={{ searchReq: '' }}
       onSubmit={(values, actions) => {
         console.log(values);
-        onSearch(values.searchReq);
+        onSearch(values.searchReq.trim());
         actions.resetForm();
       }}
     >
