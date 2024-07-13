@@ -38,6 +38,11 @@ export default function App() {
   //   }, []);
 
   const handleSearch = async newReq => {
+    if (newReq === '') {
+      toast.error('Please enter a word to search for a picture.');
+      return;
+    }
+
     setArticles([]);
     setPage(1);
     setnewReq(newReq);
